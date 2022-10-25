@@ -28,7 +28,7 @@ public abstract class WastebotCommandListener extends ListenerAdapter {
         User author = event.getAuthor();
         String content = message.getContentRaw();
 
-        if (author.isBot() || !content.equals(WastebotApi.COMMAND_PREFIX + commandName)) {
+        if (author.isBot() || !content.startsWith(WastebotApi.COMMAND_PREFIX + commandName)) {
             return;
         }
 

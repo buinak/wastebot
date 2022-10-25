@@ -13,7 +13,7 @@ public enum BotCommand  {
     HELP_COMMAND("help", "this command lists all available commands for the bot.",
             HelpCommandListener.class, CommandPermission.REGULAR),
     SPED_COMMAND("sped", "this command puts the user in the paralympic division of wastemen (prison)",
-            SpedCommandListener.class, CommandPermission.ADMINISTRATOR);
+            SpedCommandListener.class, CommandPermission.MODERATOR);
 
     @Getter
     private String name;
