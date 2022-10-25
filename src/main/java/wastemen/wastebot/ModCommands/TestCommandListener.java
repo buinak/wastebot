@@ -1,12 +1,12 @@
-package wastemen.wastebot.Commands;
+package wastemen.wastebot.ModCommands;
 
 import wastemen.wastebot.Common.BotCommand;
-import wastemen.wastebot.Common.CommandListenerAdapter;
+import wastemen.wastebot.Common.WastebotCommandListener;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
-public class TestCommandListener extends CommandListenerAdapter {
+public class TestCommandListener extends WastebotCommandListener {
 
     public TestCommandListener(BotCommand botCommand) {
         super(botCommand);

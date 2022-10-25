@@ -1,7 +1,9 @@
 package wastemen.wastebot.Core;
 
+import net.dv8tion.jda.api.utils.ChunkingFilter;
+import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import wastemen.wastebot.Common.BotCommand;
-import wastemen.wastebot.Common.CommandListenerAdapter;
+import wastemen.wastebot.Common.WastebotCommandListener;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -17,17 +19,19 @@ public class WastebotApi {
 
     public static void startBot(String token){
         JDA botApi = JDABuilder.createDefault(token)
-                .enableIntents(GatewayIntent.MESSAGE_CONTENT)
+                .enableIntents(GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES)
+                .setMemberCachePolicy(MemberCachePolicy.ALL)
+                .setChunkingFilter(ChunkingFilter.ALL)
                 .build();
 
         Arrays.asList(BotCommand.values()).forEach(botCommand -> {
             log.info("Registering {} as a listener", botCommand.getCommandListenerAdapter().getName());
             try {
-                CommandListenerAdapter commandListenerAdapter = (CommandListenerAdapter) botCommand.getCommandListenerAdapter()
+                WastebotCommandListener wastebotCommandListener = (WastebotCommandListener) botCommand.getCommandListenerAdapter()
                         .getDeclaredConstructors()[0]
                         .newInstance(botCommand);
 
-                botApi.addEventListener(commandListenerAdapter);
+                botApi.addEventListener(wastebotCommandListener);
 
             } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                 throw new RuntimeException(e);
