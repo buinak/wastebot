@@ -1,10 +1,10 @@
-package wastemen.wastebot.ModCommands;
+package eu.wastemen.wastebot.ModCommands;
 
+import eu.wastemen.wastebot.Common.BotCommand;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import wastemen.wastebot.Common.BotCommand;
-import wastemen.wastebot.Common.WastebotCommandListener;
+import eu.wastemen.wastebot.Common.WastebotCommandListener;
 
 public class SpedCommandListener extends WastebotCommandListener {
     public SpedCommandListener(BotCommand botCommand) {

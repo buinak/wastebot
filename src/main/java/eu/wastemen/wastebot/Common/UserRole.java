@@ -1,4 +1,4 @@
-package wastemen.wastebot.Common;
+package eu.wastemen.wastebot.Common;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

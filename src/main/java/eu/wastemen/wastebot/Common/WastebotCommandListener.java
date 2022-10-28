@@ -1,10 +1,10 @@
-package wastemen.wastebot.Common;
+package eu.wastemen.wastebot.Common;
 
+import eu.wastemen.wastebot.Core.WastebotApi;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import wastemen.wastebot.Core.WastebotApi;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -1,8 +1,8 @@
-package wastemen.wastebot.Common;
+package eu.wastemen.wastebot.Common;
 
-import wastemen.wastebot.ModCommands.SpedCommandListener;
-import wastemen.wastebot.UserCommands.HelpCommandListener;
-import wastemen.wastebot.ModCommands.TestCommandListener;
+import eu.wastemen.wastebot.ModCommands.SpedCommandListener;
+import eu.wastemen.wastebot.UserCommands.HelpCommandListener;
+import eu.wastemen.wastebot.ModCommands.TestCommandListener;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package wastemen.wastebot.Core;
+package eu.wastemen.wastebot.Core;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,9 +1,9 @@
-package wastemen.wastebot.Core;
+package eu.wastemen.wastebot.Core;
 
+import eu.wastemen.wastebot.Common.BotCommand;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
-import wastemen.wastebot.Common.BotCommand;
-import wastemen.wastebot.Common.WastebotCommandListener;
+import eu.wastemen.wastebot.Common.WastebotCommandListener;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;

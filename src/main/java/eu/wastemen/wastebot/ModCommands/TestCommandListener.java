@@ -1,7 +1,7 @@
-package wastemen.wastebot.ModCommands;
+package eu.wastemen.wastebot.ModCommands;
 
-import wastemen.wastebot.Common.BotCommand;
-import wastemen.wastebot.Common.WastebotCommandListener;
+import eu.wastemen.wastebot.Common.BotCommand;
+import eu.wastemen.wastebot.Common.WastebotCommandListener;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
