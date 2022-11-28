@@ -22,15 +22,29 @@ public class SpedCommandListener extends WastebotCommandListener {
         String userId = messageParts[messageParts.length - 1].replaceAll("[^\\d.]", "");
         Guild guild = event.getGuild();
         Role spedRole = guild.getRolesByName("paralympic champion", false).get(0);
+        Member member = guild.getMemberById(userId);
+        toggleSpedRole(channel, messageParts, member, guild, spedRole);
+    }
+
+    private void toggleSpedRole(MessageChannel channel, String[] messageParts, Member member, Guild guild, Role spedRole) {
+        String memberName = member.getUser().getName();
+        UserSnowflake userSnowflake = UserSnowflake.fromId(member.getId());
         if (messageParts.length == 2){
-            guild.addRoleToMember(UserSnowflake.fromId(userId), spedRole).queue();
-            channel.sendMessage(String.format("put %s into sped", guild.getMemberById(userId).getNickname())).queue();
+            if (member.getRoles().contains(spedRole)){
+                channel.sendMessage(String.format("User %s already has sped role", memberName)).queue();
+                return;
+            }
+            guild.addRoleToMember(userSnowflake, spedRole).queue();
+            channel.sendMessage(String.format("Put %s into sped", memberName)).queue();
         } else if (messageParts[1].equals("remove")) {
-            guild.removeRoleFromMember(UserSnowflake.fromId(userId), spedRole).queue();
-            channel.sendMessage(String.format("removed %s from sped", guild.getMemberById(userId).getNickname())).queue();
+            if (!member.getRoles().contains(spedRole)){
+                channel.sendMessage(String.format("User %s does not have sped role", memberName)).queue();
+                return;
+            }
+            guild.removeRoleFromMember(userSnowflake, spedRole).queue();
+            channel.sendMessage(String.format("Removed %s from sped", memberName)).queue();
         } else {
-            channel.sendMessage("invalid format").queue();
-            return;
+            channel.sendMessage("Invalid format").queue();
         }
     }
 }
