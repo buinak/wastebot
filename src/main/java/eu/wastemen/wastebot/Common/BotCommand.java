@@ -1,5 +1,6 @@
 package eu.wastemen.wastebot.Common;
 
+import eu.wastemen.wastebot.ModCommands.PicPermsCommandListener;
 import eu.wastemen.wastebot.ModCommands.SpedCommandListener;
 import eu.wastemen.wastebot.UserCommands.HelpCommandListener;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,9 @@ public enum BotCommand  {
     HELP_COMMAND("help", "this command lists all available commands for the bot",
             HelpCommandListener.class, CommandPermission.REGULAR),
     SPED_COMMAND("sped", "this command puts the user in prison",
-            SpedCommandListener.class, CommandPermission.MODERATOR);
+            SpedCommandListener.class, CommandPermission.MODERATOR),
+    PIC_PERMS_COMMAND("picperms", "this command gives the user pic perms",
+            PicPermsCommandListener.class, CommandPermission.MODERATOR);
 
     @Getter
     private String name;
